@@ -1,8 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
+import { useCart } from '../../context/CartContext';
 
 export default function Header() {
     const location = useLocation();
+    const { cartCount } = useCart();
 
     const getBreadcrumb = () => {
         if (location.pathname === '/') return 'Home';
@@ -27,7 +29,7 @@ export default function Header() {
             </div>
 
             <div className="cart">
-                🛒 (10)
+                🛒 ({cartCount})
             </div>
         </header>
     );

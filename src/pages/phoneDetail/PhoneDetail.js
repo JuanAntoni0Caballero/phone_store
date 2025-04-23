@@ -5,13 +5,14 @@ import { fetchPhoneById } from "../../services/phoneService";
 import Button from "../../componets/button/Button";
 import Selector from "../../componets/selector/Selector";
 import PhoneDetailCard from "../../componets/phoneDetailCard/PhoneDetailCard";
-
+import { useCart } from "../../context/CartContext";
 
 export default function PhoneDetail() {
     const { id } = useParams();
     const [phone, setPhone] = useState(null);
     const [selectedColor, setSelectedColor] = useState("");
     const [selectedStorage, setSelectedStorage] = useState("");
+    const { addToCart } = useCart();
 
     useEffect(() => {
         fetchPhoneById(id)
@@ -24,7 +25,7 @@ export default function PhoneDetail() {
 
 
     const handleAddToCart = () => {
-        console.log("Añadir a la cesta", id, selectedColor, selectedStorage);
+        addToCart(id, selectedColor, selectedStorage)
     };
 
     return (
