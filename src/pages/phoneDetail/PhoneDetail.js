@@ -29,38 +29,44 @@ export default function PhoneDetail() {
 
     return (
         <div className="phone-detail-container">
-            <div className="image-column">
-                <img src={phone.imgUrl} alt={phone.model} />
-            </div>
-
-            <div className="details-column">
-
-                <div className="details-grup">
-                    <Link to="/" className="back-link">← Volver a la lista</Link>
-                    <PhoneDetailCard phone={phone} />
+            {!phone ? (
+                <div className="loading">
+                    <h1>Cargando...</h1>
                 </div>
-
-                <div className="actions-grup">
-                    <div className="select-group">
-                        <Selector
-                            label="Color"
-                            options={phone.options.colors}
-                            value={selectedColor}
-                            onChange={setSelectedColor}
-                        />
-
-                        <Selector
-                            label="Almacenamiento"
-                            options={phone.options.storages}
-                            value={selectedStorage}
-                            onChange={setSelectedStorage}
-                        />
+            ) :
+                <>
+                    <div className="image-column">
+                        <img src={phone.imgUrl} alt={phone.model} />
                     </div>
-                    <div className="button-group">
-                        <Button onClick={handleAddToCart} children='Añadir a la cesta' />
+
+                    <div className="details-column">
+                        <div className="details-grup">
+                            <Link to="/" className="back-link">← Volver a la lista</Link>
+                            <PhoneDetailCard phone={phone} />
+                        </div>
+
+                        <div className="actions-grup">
+                            <div className="select-group">
+                                <Selector
+                                    label="Color"
+                                    options={phone.options.colors}
+                                    value={selectedColor}
+                                    onChange={setSelectedColor}
+                                />
+
+                                <Selector
+                                    label="Almacenamiento"
+                                    options={phone.options.storages}
+                                    value={selectedStorage}
+                                    onChange={setSelectedStorage}
+                                />
+                            </div>
+                            <div className="button-group">
+                                <Button onClick={handleAddToCart} children='Añadir a la cesta' />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </>}
         </div>
     );
 
