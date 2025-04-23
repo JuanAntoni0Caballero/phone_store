@@ -1,0 +1,18 @@
+:root {
+  /* Base colors */
+  --color-primary: #0f172a; /* Header background, dark text */
+  --color-secondary: #1e293b; /* Main text */
+  --color-accent: #38bdf8; /* Links */
+  --color-success: #22c55e; /* Price */
+  --color-light: #cbd5e1; /* Secondary text */
+  --color-white: #ffffff;
+
+  /* Shadows */
+  --shadow-small: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-large: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+  /* Border radius */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+}
