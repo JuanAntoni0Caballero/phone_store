@@ -1,0 +1,33 @@
+@import "../../styles/variables.css";
+
+.search-input {
+  width: 300px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: var(--radius-large);
+  background-color: var(--color-white);
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.search-input::placeholder {
+  color: var(--color-light);
+  font-style: italic;
+}
+
+.search-input:hover {
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .search-input {
+    width: 250px;
+  }
+}

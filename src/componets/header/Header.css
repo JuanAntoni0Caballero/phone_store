@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #0f172a;
+  background-color: var(--color-primary);
   color: white;
   box-shadow: var(--shadow-medium);
 }
@@ -32,7 +32,7 @@
 
 .header .cart {
   padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+  border-radius: var(--radius-small);
   color: var(--color-white);
   font-weight: 600;
 }
