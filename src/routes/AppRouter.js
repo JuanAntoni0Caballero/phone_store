@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../pages/home/Home';
-import PhoneDetail from '../pages/phoneDetail/phoneDetail';
+import PhoneDetail from '../pages/phoneDetail/PhoneDetail';
 
 const AppRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/detalle/:id" element={<PhoneDetail />} />
+            <Route path="/detalles/:id" element={<PhoneDetail />} />
         </Routes>
     );
 };
