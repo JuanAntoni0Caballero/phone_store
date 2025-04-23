@@ -20,12 +20,6 @@
     "lint": "eslint 'src/**/*.{js,jsx}'",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -39,7 +33,9 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.57.1",
+    "@babel/eslint-parser": "^7.27.0",
+    "@babel/preset-react": "^7.26.3",
+    "eslint": "^9.25.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.0.0"
   }

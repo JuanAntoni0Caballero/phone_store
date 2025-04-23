@@ -19,3 +19,18 @@ export const fetchPhones = async () => {
         throw error;
     }
 };
+
+
+export const fetchPhoneById = async (id) => {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/product/${id}`);
+        if (!response.ok) {
+            throw new Error('Error getting phone number');
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error in fetchPhoneById:', error);
+        throw error;
+    }
+}
