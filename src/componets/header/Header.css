@@ -1,6 +1,6 @@
 @import "../../styles/variables.css";
 
-.header {
+.desktop-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,29 +10,67 @@
   box-shadow: var(--shadow-medium);
 }
 
-.header a {
+.desktop-header a {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: 500;
 }
 
-.header a:hover {
+.desktop-header a:hover {
   text-decoration: underline;
 }
 
-.header .logo h1 {
+.desktop-header .logo h1 {
   font-size: 1.5rem;
   margin: 0;
 }
 
-.header .links span {
+.desktop-header .links span {
   font-size: 0.9rem;
   color: var(--color-light);
 }
 
-.header .cart {
+.desktop-header .cart {
   padding: 0.4rem 0.8rem;
   border-radius: var(--radius-small);
   color: var(--color-white);
   font-weight: 600;
+}
+
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 468px) {
+  .desktop-header {
+    display: none;
+  }
+  .mobile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .mobile-header a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .mobile-header .logo h1 {
+    font-size: 1.2rem;
+  }
+
+  .mobile-header .links span {
+    font-size: 0.8rem;
+  }
+
+  .mobile-header {
+    display: block;
+    text-align: center;
+  }
 }
