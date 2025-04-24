@@ -7,7 +7,7 @@ export default function PhoneCard({ phone }) {
             <img src={phone.imgUrl} alt={phone.brand} />
             <h3>{phone.brand}</h3>
             <p>{phone.model}</p>
-            <p className="price">Price: ${phone.price}</p>
+            <p className="price">Precio: {phone.price}€</p>
         </Link>
     );
 }
