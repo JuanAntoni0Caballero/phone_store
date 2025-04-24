@@ -1,21 +1,21 @@
 import "./SearchInput.css";
 import { useState } from "react";
 
-export default function SearchInput({ onSearch }) {
-    const [searchTerm, setSearchTerm] = useState("");
+export default function SearchInput({ onSearch, type, placeholder }) {
+    const [value, setValue] = useState("");
 
     const handleChange = (e) => {
-        setSearchTerm(e.target.value);
+        setValue(e.target.value);
         onSearch(e.target.value);
     };
 
     return (
         <input
-            type="text"
-            value={searchTerm}
+            type={type}
+            value={value}
             onChange={handleChange}
-            placeholder="Buscar por marca o modelo"
-            className="search-input"
+            placeholder={placeholder}
+            className="input"
         />
     );
 }

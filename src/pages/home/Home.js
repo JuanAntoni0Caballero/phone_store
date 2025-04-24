@@ -32,7 +32,10 @@ export default function Home() {
     return (
         <div className="home-container">
             <div className="search-container">
-                <SearchInput onSearch={handleSearch} />
+                <SearchInput
+                    onSearch={handleSearch}
+                    type={'text'}
+                    placeholder={"Buscar por marca o modelo"} />
             </div>
             <div className="card-grid">
                 {filteredPhones.map(phone => (
