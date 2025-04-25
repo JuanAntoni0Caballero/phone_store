@@ -30,14 +30,14 @@ export default function Home() {
     };
 
     return (
-        <div className="home-container">
-            <div className="search-container">
+        <div className='home-container'>
+            <div className='search-container'>
                 <SearchInput
                     onSearch={handleSearch}
                     type={'text'}
-                    placeholder={"Buscar por marca o modelo"} />
+                    placeholder={'Buscar por marca o modelo'} />
             </div>
-            <div className="card-grid">
+            <div className='card-grid'>
                 {filteredPhones.map(phone => (
                     <PhoneCard key={phone.id} phone={phone} />
                 ))}
