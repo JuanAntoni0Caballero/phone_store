@@ -1,8 +1,8 @@
-import "./SearchInput.css";
-import { useState } from "react";
+import './SearchInput.css';
+import { useState } from 'react';
 
 export default function SearchInput({ onSearch, type, placeholder }) {
-    const [value, setValue] = useState("");
+    const [value, setValue] = useState('');
 
     const handleChange = (e) => {
         setValue(e.target.value);
@@ -15,7 +15,7 @@ export default function SearchInput({ onSearch, type, placeholder }) {
             value={value}
             onChange={handleChange}
             placeholder={placeholder}
-            className="input"
+            className='input'
         />
     );
 }
