@@ -23,6 +23,13 @@ export default defineConfig([
     },
     rules: {
       "react/react-in-jsx-scope": "off",
+      "no-duplicate-imports": "error",
+      "eqeqeq": ["error", "always"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      "prefer-const": "error",
+      "no-var": "error",
+
     },
     settings: {
       react: {

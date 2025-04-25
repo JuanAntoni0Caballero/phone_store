@@ -8,8 +8,8 @@ export function CartProvider({ children }) {
     const addToCart = async (id, colorCode, storageCode) => {
         try {
             const response = await fetch(`${process.env.REACT_APP_API_URL}/cart`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     id,
                     colorCode,
@@ -21,7 +21,7 @@ export function CartProvider({ children }) {
                 setCartCount(data.count);
             }
         } catch (error) {
-            console.error("Error al agregar al carrito", error);
+            console.error('Error al agregar al carrito', error);
         }
     };
 

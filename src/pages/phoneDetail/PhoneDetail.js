@@ -1,17 +1,17 @@
-import "./PhoneDetail.css";
-import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { fetchPhoneById } from "../../services/phoneService";
-import Button from "../../componets/button/Button";
-import Selector from "../../componets/selector/Selector";
-import PhoneDetailCard from "../../componets/phoneDetailCard/PhoneDetailCard";
-import { useCart } from "../../context/CartContext";
+import './PhoneDetail.css';
+import { useParams, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { fetchPhoneById } from '../../services/phoneService';
+import Button from '../../componets/button/Button';
+import Selector from '../../componets/selector/Selector';
+import PhoneDetailCard from '../../componets/phoneDetailCard/PhoneDetailCard';
+import { useCart } from '../../context/CartContext';
 
 export default function PhoneDetail() {
     const { id } = useParams();
     const [phone, setPhone] = useState(null);
-    const [selectedColor, setSelectedColor] = useState("");
-    const [selectedStorage, setSelectedStorage] = useState("");
+    const [selectedColor, setSelectedColor] = useState('');
+    const [selectedStorage, setSelectedStorage] = useState('');
     const { addToCart } = useCart();
 
     useEffect(() => {
@@ -25,44 +25,44 @@ export default function PhoneDetail() {
 
 
     const handleAddToCart = () => {
-        addToCart(id, selectedColor, selectedStorage)
+        addToCart(id, selectedColor, selectedStorage);
     };
 
     return (
-        <div className="phone-detail-container">
+        <div className='phone-detail-container'>
             {!phone ? (
-                <div className="loading">
+                <div className='loading'>
                     <h1>Cargando...</h1>
                 </div>
             ) :
                 <>
-                    <div className="image-column">
+                    <div className='image-column'>
                         <img src={phone.imgUrl} alt={phone.model} />
                     </div>
 
-                    <div className="details-column">
-                        <div className="details-grup">
-                            <Link to="/" className="back-link">← Volver a la lista</Link>
+                    <div className='details-column'>
+                        <div className='details-grup'>
+                            <Link to='/' className='back-link'>← Volver a la lista</Link>
                             <PhoneDetailCard phone={phone} />
                         </div>
 
-                        <div className="actions-grup">
-                            <div className="select-group">
+                        <div className='actions-grup'>
+                            <div className='select-group'>
                                 <Selector
-                                    label="Color"
+                                    label='Color'
                                     options={phone.options.colors}
                                     value={selectedColor}
                                     onChange={setSelectedColor}
                                 />
 
                                 <Selector
-                                    label="Almacenamiento"
+                                    label='Almacenamiento'
                                     options={phone.options.storages}
                                     value={selectedStorage}
                                     onChange={setSelectedStorage}
                                 />
                             </div>
-                            <div className="button-group">
+                            <div className='button-group'>
                                 <Button onClick={handleAddToCart} children='Añadir a la cesta' />
                             </div>
                         </div>
@@ -71,4 +71,4 @@ export default function PhoneDetail() {
         </div>
     );
 
-}
+};

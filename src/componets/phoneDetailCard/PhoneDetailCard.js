@@ -3,10 +3,10 @@ import './PhoneDetailCard.css';
 export default function PhoneDetailCard({ phone }) {
     return (
         <div>
-            <h1 className="title">{phone.brand} {phone.model}</h1>
-            <p className="price">{phone.price}€</p>
+            <h1 className='title'>{phone.brand} {phone.model}</h1>
+            <p className='price'>{phone.price}€</p>
 
-            <div className="specs">
+            <div className='specs'>
                 <p><strong>CPU:</strong> {phone.cpu}</p>
                 <p><strong>RAM:</strong> {phone.ram}</p>
                 <p><strong>Sistema Operativo:</strong> {phone.os}</p>
@@ -17,5 +17,5 @@ export default function PhoneDetailCard({ phone }) {
                 <p><strong>Peso:</strong> {phone.weight}</p>
             </div>
         </div>
-    )
+    );
 };
