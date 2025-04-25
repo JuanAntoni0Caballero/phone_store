@@ -17,7 +17,6 @@ export function CartProvider({ children }) {
                 }),
             });
             const data = await response.json();
-            console.log("Response from server", data);
             if (data && data.count) {
                 setCartCount(data.count);
             }
