@@ -10,16 +10,20 @@ describe('SearchInput', () => {
     });
 
     test('renders input correctly', () => {
-        render(<SearchInput onSearch={mockOnSearch} />);
+        const placeholderText = 'Buscar por marca o modelo';
+        
+        render(<SearchInput onSearch={mockOnSearch} placeholder={placeholderText} />);
 
-        const inputElement = screen.getByPlaceholderText('Buscar por marca o modelo');
+        const inputElement = screen.getByPlaceholderText(placeholderText);
         expect(inputElement).toBeInTheDocument();
     });
 
     test('calls onSearch when typing in the input', () => {
-        render(<SearchInput onSearch={mockOnSearch} />);
+        const placeholderText = 'Buscar por marca o modelo';
 
-        const inputElement = screen.getByPlaceholderText('Buscar por marca o modelo');
+        render(<SearchInput onSearch={mockOnSearch} placeholder={placeholderText} />);
+
+        const inputElement = screen.getByPlaceholderText(placeholderText);
 
         fireEvent.change(inputElement, { target: { value: 'Samsung' } });
 
@@ -28,9 +32,11 @@ describe('SearchInput', () => {
     });
 
     test('updates input value when typing', () => {
-        render(<SearchInput onSearch={mockOnSearch} />);
+        const placeholderText = 'Buscar por marca o modelo';
 
-        const inputElement = screen.getByPlaceholderText('Buscar por marca o modelo');
+        render(<SearchInput onSearch={mockOnSearch} placeholder={placeholderText} />);
+
+        const inputElement = screen.getByPlaceholderText(placeholderText);
 
         fireEvent.change(inputElement, { target: { value: 'iPhone' } });
 
